@@ -8,4 +8,5 @@ return [
     'add_task' => 'Add Task',
     'current_task' => 'Current Tasks',
     'delete' => 'Delete',
+    'language' => 'Language',
 ];

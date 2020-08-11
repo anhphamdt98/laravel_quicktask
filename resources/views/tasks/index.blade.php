@@ -3,6 +3,7 @@
 @section('content')
     <div class="card">
         <h4 class="card-header">{{ trans('task.new_task') }}</h4>
+        @include('common.errors')
         <form action="{{ route('tasks.index') }}" method="POST" class="form-horizontal card-body">
             @csrf
             <div class="form-group">
@@ -13,11 +14,36 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-6">
-                    <button type="submit" class="btn btn-secondary">
+                    <button type="submit" class="btn btn-primary">
                         <i class="fa fa-btn fa-plus"></i>{{ trans('task.add_task') }}
                     </button>
                 </div>
             </div>
         </form>
-    </div>
+    </div><br>
+    @if (count($tasks) > 0)
+        <div class="card">
+            <h4 class="card-header">{{ trans('task.current_task') }}</h4>
+            <div class="card-body">
+                <table class="table table-striped task-table">
+                    <thead>
+                        <th>{{ trans('task.task') }}</th>
+                        <th>&nbsp;</th>
+                    </thead>
+                    <tbody>
+                        @foreach ($tasks as $task)
+                            <tr>
+                                <td class="table-text">
+                                    <div>{{ $task->name }}</div>
+                                </td>
+                                <td>
+                                    <!-- TODO: Delete Button -->
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    @endif
 @endsection

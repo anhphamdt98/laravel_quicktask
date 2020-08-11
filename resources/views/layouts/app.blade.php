@@ -12,7 +12,11 @@
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <div class="card">
-                        <h4 class="card-header">{{ trans('task.task_list') }}</h4>
+                        <div class="card-header">
+                            <div class="row">
+                                <h4 class="col-md-9">{{ trans('task.task_list') }}</h4>
+                            </div>
+                        </div>
                     </div><br>
                     @yield('content') 
                 </div>
