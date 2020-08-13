@@ -8,4 +8,5 @@ return [
     'add_task' => 'Thêm công việc',
     'current_task' => 'Công việc hiện tại',
     'delete' => 'Xóa',
+    'language' => 'Ngôn ngữ',
 ];
